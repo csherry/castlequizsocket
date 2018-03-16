@@ -1,4 +1,4 @@
-const port = process.env.PORT || 10022;
+const port = process.env.PORT || 10025;
 const server = require("http").Server();
 
 var io = require("socket.io")(server);
@@ -23,7 +23,7 @@ io.on("connection", function(socket){
     socket.on('answer', function(data){
         var msg = 'WRONG!';
         if(data == allqs[socket.myRoom].qobj.a){
-            msg = "You've got it";
+            msg = "You've won in life";
         }
         
         socket.emit('result', msg);
