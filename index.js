@@ -21,9 +21,9 @@ io.on("connection", function(socket){
     })
     
     socket.on('answer', function(data){
-        var msg = 'WRONG!';
+        var msg = "That's the wrong one!";
         if(data == allqs[socket.myRoom].qobj.a){
-            msg = "You've won in life";
+            msg = "You've got it!";
         }
         
         socket.emit('result', msg);
